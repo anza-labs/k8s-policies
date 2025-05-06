@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "typings": "dist/index",
   "engines": {
-    "node": "^v23.9.0"
+    "node": ">=23.9.0"
   },
   "scripts": {
     "compile": "tsc && npm run bundle",
@@ -13,7 +13,7 @@
     "bundle": "webpack --config webpack.config.js",
     "format": "prettier --write '{src,tests}/**'",
     "format-check": "prettier --check '{src,tests}/**'",
-    "test": "jest --env=node --colors --coverage test",
+    "test": "jest --env=node --colors --coverage tests",
     "prepublishOnly": "npm run test && npm run compile-clean"
   },
   "devDependencies": {

@@ -44,7 +44,7 @@ describe("enforceAnnotations", () => {
     };
 
     // test
-    const response = enforceAnnotations(request, annotations) as V1StatefulSet;
+    const response = enforceAnnotations(request, annotations) as V1Deployment;
 
     // validate
     expect(response).toBeDefined();
@@ -70,7 +70,7 @@ describe("enforceAnnotations", () => {
     };
 
     // test
-    const response = enforceAnnotations(request, annotations) as V1Deployment;
+    const response = enforceAnnotations(request, annotations) as V1StatefulSet;
 
     // validate
     expect(response).toBeDefined();
