@@ -42,3 +42,26 @@ jobs:
           node-version-file: package.json
       - run: npm install --include=dev
       - run: npm run compile
+      - uses: actions/upload-artifact@v4
+        with:
+          path: 'policies/*'
+
+  test-e2e:
+    runs-on: ubuntu-latest
+    needs:
+      - test
+      - compile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+      - uses: actions/download-artifact@v4
+        with:
+          path: 'policies/'
+      - run: |
+          make \
+            cluster deploy
+      - run: |
+          make \
+            test-e2e
