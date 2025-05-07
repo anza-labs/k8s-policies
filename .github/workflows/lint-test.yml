@@ -44,6 +44,7 @@ jobs:
       - run: npm run compile
       - uses: actions/upload-artifact@v4
         with:
+          name: policies
           path: 'policies/*'
 
   test-e2e:
@@ -56,9 +57,16 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: 'stable'
+      - uses: azure/setup-helm@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v4
         with:
-          path: 'policies/'
+          path: '.'
+      - run: |
+          ls -alh policies
+          ls -alh policies/*
+          tree policies
       - run: |
           make \
             cluster deploy

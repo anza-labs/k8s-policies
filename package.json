@@ -8,7 +8,7 @@
     "node": ">=23.9.0"
   },
   "scripts": {
-    "compile": "tsc && npm run bundle",
+    "compile": "tsc && npm run bundle && tar -czf dist/bundle.tar.gz policies/*",
     "compile-clean": "rm -rf dist/ && tsc && npm run bundle",
     "bundle": "webpack --config webpack.config.js",
     "format": "prettier --write '{src,tests}/**' && eclint fix '**'",
