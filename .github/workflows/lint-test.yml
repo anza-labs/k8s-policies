@@ -46,8 +46,9 @@ jobs:
         with:
           name: policies
           path: 'policies/*'
+          retention-days: 7
 
-  test-e2e:
+  e2e:
     runs-on: ubuntu-latest
     needs:
       - test
@@ -61,12 +62,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/download-artifact@v4
-        with:
-          path: '.'
-      - run: |
-          ls -alh policies
-          ls -alh policies/*
-          tree policies
       - run: |
           make \
             cluster deploy
