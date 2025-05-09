@@ -1,18 +1,25 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "automerge": true,
-  "extends": ["config:recommended"],
-  "labels": ["area/dependency"],
+  "extends": [
+    "config:recommended"
+  ],
+  "labels": [
+    "area/dependency"
+  ],
   "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
     "enabled": true,
-    "labels": ["area/dependency", "kind/security"]
+    "labels": [
+      "area/dependency",
+      "kind/security"
+    ]
   },
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "kind.yaml$"
+      "managerFilePatterns": [
+        "/kind.yaml$/"
       ],
       "matchStrings": [
         "\\s+image:\\s(?<depName>.*?):(?<currentValue>\\S+)"
@@ -21,8 +28,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^Makefile$"
+      "managerFilePatterns": [
+        "/^Makefile$/"
       ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s[A-Z_]+\\s\\?=\\s(?<currentValue>\\S+)"
