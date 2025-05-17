@@ -112,7 +112,7 @@ HELM_VERSION ?= v3.17.3
 JSPOLICY_VERSION ?= 0.2.2
 
 # renovate: datasource=github-tags depName=kubernetes-sigs/kind
-KIND_VERSION ?= v0.27.0
+KIND_VERSION ?= v0.28.0
 
 # renovate: datasource=github-tags depName=kubernetes/kubernetes
 KUBECTL_VERSION ?= v1.33.1
