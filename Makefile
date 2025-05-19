@@ -106,7 +106,7 @@ CLOUD_PROVIDER_KIND_VERSION ?= v0.6.0
 CTLPTL_VERSION ?= v0.8.41
 
 # renovate: datasource=github-tags depName=helm/helm
-HELM_VERSION ?= v3.17.3
+HELM_VERSION ?= v3.18.0
 
 # renovate: datasource=helm depName=jspolicy registryUrl=https://charts.loft.sh
 JSPOLICY_VERSION ?= 0.2.2
