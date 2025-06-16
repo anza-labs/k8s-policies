@@ -19,7 +19,7 @@
     "@jspolicy/types": "^0.0.4",
     "@jspolicy/webpack-plugin": "^0.0.5",
     "@kubernetes/client-node": "^1.1.2",
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^30.0.0",
     "@types/ws": "^8.18.1",
     "eclint": "^2.8.1",
     "jest": "^30.0.0",
