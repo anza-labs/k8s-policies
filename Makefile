@@ -115,7 +115,7 @@ JSPOLICY_VERSION ?= 0.2.2
 KIND_VERSION ?= v0.29.0
 
 # renovate: datasource=github-tags depName=kubernetes/kubernetes
-KUBECTL_VERSION ?= v1.33.1
+KUBECTL_VERSION ?= v1.33.2
 
 ## Tool Binaries
 CHAINSAW ?= $(LOCALBIN)/chainsaw-$(CHAINSAW_VERSION)
